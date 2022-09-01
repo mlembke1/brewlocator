@@ -1,1 +1,12 @@
-.Brewery {}
+.Brewery {
+    border-bottom: 1px solid #efefef;
+
+    .brew-detail-wrapper {
+        display: flex;
+        gap: 1em;
+
+        & > :first-child {
+            width: 3em;
+        }
+    }
+}
