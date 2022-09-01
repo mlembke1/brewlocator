@@ -22,12 +22,12 @@ function All() {
 
   return (
     <div>
-      <h2>All Breweries</h2>
         {
           allBreweries
-            .map(brew => (
-              <Brewery key={brew.id} brew={brew}></Brewery>
-            ))}
+          .map(brew => (
+            <Brewery key={brew.id} brew={brew}></Brewery>
+          ))
+        }
     </div>
   )
 }

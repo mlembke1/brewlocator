@@ -4,4 +4,14 @@
         display: flex;
         gap: 2em;
     }
+
+    .link {
+        text-decoration: none;
+        color: #bdbdbd;
+        transition: .2s;
+
+        &:hover {
+            color: #123;
+        }
+    }
 }

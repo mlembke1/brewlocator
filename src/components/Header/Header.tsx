@@ -11,16 +11,24 @@ function Header(props: HeaderProps) {
     <div className={styles.Header}>
       <ul>
         <li>
-          <Link to="/">All</Link>
+          <Link className={styles.link} to="/">
+            <h2>All</h2>
+          </Link>
         </li>
         <li>
-          <Link to="by-city">By City</Link>   
+          <Link className={styles.link} to="by-city">
+            <h2>By City</h2>
+          </Link>   
         </li>
         <li>
-          <Link to="by-postal">By Postal</Link>   
+          <Link className={styles.link} to="by-postal">
+            <h2>By Postal</h2>
+          </Link>   
         </li>
         <li>
-          <Link to="by-type">By Type</Link>
+          <Link className={styles.link} to="by-type">
+            <h2>By Type</h2>
+          </Link>
         </li>
       </ul>      
     </div>
