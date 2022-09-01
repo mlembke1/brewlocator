@@ -1,29 +1,35 @@
-import React, { FC } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './All.module.scss';
-import  axios, { AxiosResponse } from 'axios';
+import  { AxiosResponse } from 'axios';
+import { getAllBreweries } from '../../services/breweries.service';
+import { IBrewery } from '../../interfaces/brewery';
+import Brewery from '../../components/Brewery/Brewery';
 
-class All extends React.Component {
+function All() {
+  const [allBreweries, setAllBreweries] = useState<IBrewery[]>([]);
 
-  constructor(props: any){
-    super(props);
-    this.state = {};
-  }
+  useEffect(() => {
+    // This is like ngOnInit or ComponentDidMount for Classes.
+    if (allBreweries.length < 1) {
+      getAllBreweries().then((res: AxiosResponse<any, any>) => {
+        setAllBreweries(res.data);
+      });
+    }
+    return () => {
+      // This is like ngOnDestroy. Unsubscribe to whatever or clean up.
+    }
+  })
 
-  componentDidMount(){
-    axios.get(
-      `https://api.openbrewerydb.org/breweries`
-    ).then((res: AxiosResponse<any, any>) => {
-      this.setState({ allBreweries: res });
-    });
-  }
-
-  render(): React.ReactNode {
-      return (
-        <div>
-          All Page Works!
-        </div>
-      )
-  }
+  return (
+    <div>
+      <h2>All Breweries</h2>
+        {
+          allBreweries
+            .map(brew => (
+              <Brewery key={brew.id} brew={brew}></Brewery>
+            ))}
+    </div>
+  )
 }
 
 export default All;
