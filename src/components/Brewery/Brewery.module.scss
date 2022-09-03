@@ -1,9 +1,23 @@
 .Brewery {
     border-bottom: 1px solid #efefef;
+    margin: .5em;
+    transition: .2s;
+
+    &:hover {
+        scale: 1.02;
+        cursor: pointer;
+    }
 
     .brew-detail-wrapper {
         display: flex;
         gap: 1em;
+
+        & > * {
+            font-size: .85em;
+            text-transform: uppercase;
+            font-family: system-ui;
+            letter-spacing: .5px;
+        }
 
         & > :first-child {
             width: 3em;

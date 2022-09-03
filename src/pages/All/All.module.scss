@@ -1,1 +1,6 @@
-.All {}
+.All {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    & > * { width: 20em; }
+}

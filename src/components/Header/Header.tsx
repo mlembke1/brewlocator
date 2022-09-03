@@ -22,7 +22,7 @@ function Header(props: HeaderProps) {
         </li>
         <li>
           <Link className={styles.link} to="by-postal">
-            <h2>By Postal</h2>
+            <h2>Search By Postal</h2>
           </Link>   
         </li>
         <li>

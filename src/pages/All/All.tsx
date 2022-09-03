@@ -21,10 +21,10 @@ function All() {
   })
 
   return (
-    <div>
+    <div className={styles.All}>
         {
           allBreweries
-          .map(brew => (
+          .map((brew: IBrewery) => (
             <Brewery key={brew.id} brew={brew}></Brewery>
           ))
         }
