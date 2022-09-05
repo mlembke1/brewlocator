@@ -28,7 +28,7 @@ function Brewery(props?: BreweryProps) {
   }, [params.breweryid, props]);
 
   return (
-    <Card onClick={() => navigate(`/brewery/${brewery?.id}`)} className={styles.Brewery}>
+    <Card onClick={() => navigate(`/brewery/${brewery?.id}`, { state: brewery })} className={styles.Brewery}>
       <div className={styles['brew-detail-wrapper']}>
           <div>Name:</div> <div>{ brewery?.name }</div>
       </div>
