@@ -16,5 +16,3 @@ export function getBreweriesByPostal(postal: string):  Promise<AxiosResponse<any
 export function getBreweriesByType(type?: string):  Promise<AxiosResponse<any, any>> {
     return axios.get<IBrewery[]>(`https://api.openbrewerydb.org/breweries?by_type=${type}`);
 }
-
-cleçç
